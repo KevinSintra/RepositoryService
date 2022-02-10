@@ -1,0 +1,4 @@
+﻿這個有點像是IoC容器 但不是純自動 主要功能
+	1. 實例化 對應的 EFGenericRepository<T> 的物件給你
+	2. 幫忙管控併關閉 實例出來的 DbContext
+	3. 需要你給相對應的Dbcontex才行 <泛型>需對應 該 Dbcontext中的資料表

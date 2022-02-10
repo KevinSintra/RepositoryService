@@ -1,0 +1,16 @@
+﻿Service 的定義 如同 商業邏輯層 : 
+
+	以前的商業邏輯可能會直接包含於當前那個網頁或是App，須建立類別來取值來做判斷後存取資料。
+		所以以前的商業邏輯層包含了CRUD之外還有商業邏輯，在MVC中應該要把CRUD與商業邏輯層在拆開來。
+		在MVC中我們或許會寫在Controller中，這樣會導致Controller除了要控制流程外還要做判斷喪失了單一職責。
+		那我們之前建立的Repository層的通用介面與類別後，又繼續寫了各個Model的類別需要額外處理的介面與方法來擴充通用。
+	
+	
+	那Service層就是要來取代針對各個Model可能要有額外的處理判斷後做新刪修!!
+
+	也就是說整體架構如下 CRUD透過了通用的Repository介面與類別  Service層包著商業邏輯後去使用Repository類別。
+
+	拿MVC的整體架構來說 : 
+		Controller 只要專注在流程控制，使用 Service 做想做的事情。
+		Service 只要專注在商業邏輯，使用 Repository 做想做的事情。
+		Repository 只要專注在各個 Entity的物件 與各個 Model的類別 還有 CRUD 。
